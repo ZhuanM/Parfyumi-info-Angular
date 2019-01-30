@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url("bgimage.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    font-family: monospace;
+}
+
+#main-title {
+    color: white;
+    font-family: 'Pattaya', sans-serif;
+    font-size: 70px;
+    text-align: center;
+}
+
+.button {
+    margin-top: 30px;
+    margin-left: 440px;
+}
+
+.btn {
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    margin-right: 5px;
+    margin-left: 90px;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    background-color: darkorange;
+    font-family: "Roboto", sans-serif;
+}
+
+.mySlides {
+    width: 550px;
+    height: 300px;
+    border-radius: 25px;
+}
+.w3-left, .w3-right {
+    margin-bottom: 50px;
+    cursor: pointer;
+    width: 10px;
+    height: 0px;
+    color: white;
+}
+
+.w3-badge {
+    height: 10px;
+}
+
+.w3-right {
+    margin-right:431px;
+}
+.w3-badge {
+    height:13px;
+    width:13px;
+    padding:0;
+}
+
+.w3-content {
+    position: absolute;
+    bottom: 120px;
+    left: -552px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    transition: 0.1s;
+}
+
+.w3-content-expanded {
+    position: absolute;
+    bottom: 120px;
+    left: 670px;
+    border: 1px solid #ddd;
+}
+
+.hero {
+    position: absolute;
+    width: 1200px;
+    margin-left: 360px;
+    margin-top: 320px;
+    transition: 0.1s;
+}
+
+.hero-expanded {
+    position: absolute;
+    width: 1200px;
+    margin-left: 360px;
+    margin-top: 0px;
+    bottom: 500px;
+}

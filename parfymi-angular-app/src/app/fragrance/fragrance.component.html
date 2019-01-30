@@ -1,0 +1,17 @@
+<a target="_blank" rel="noopener noreferrer" [href]="fragInfo.infoLink">
+  <div id="fragrance-container">
+    <img [src]="fragInfo.image">
+    <h1>{{fragInfo.name}}</h1>
+    <h2>{{fragInfo.designer}}</h2>
+    <h3 #genderInfo>{{fragInfo.gender | titlecase}}</h3>
+  </div>
+</a>
+
+
+<!--
+<script>
+  var text = document.getElementById("genderInfo").innerHTML;
+  if(text == "Male")
+    document.getElementById("genderInfo").style.color = ("blue");
+</script>
+-->

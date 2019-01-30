@@ -1,0 +1,15 @@
+footer {
+    background: #333;
+    overflow: auto;
+    color: #fff;
+  }
+
+.footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#copyright {
+    margin-top: 10px;
+    text-align: center;
+}
