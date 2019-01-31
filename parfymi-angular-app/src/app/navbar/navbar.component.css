@@ -3,7 +3,6 @@
 }
 
 .navbar-brand {
-    margin-left:285px;
     font-family: 'Petit Formal Script', cursive;
     font-size:25px;
 }
@@ -17,6 +16,5 @@
 }
 
 #navbarSupportedContent {
-    margin-left:720px;
     font-family: 'Philosopher', sans-serif;
 }
