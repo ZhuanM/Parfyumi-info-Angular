@@ -86,7 +86,7 @@
     </header>
     <hr class="divider">
     <div id="frags">
-      <app-fragrance *ngFor="let frag of visibleFrags" [fragInfo]="frag"></app-fragrance>
+      <app-fragrance *ngFor="let frag of visibleFrags" [fragInfo]="frag" (click)="openModal()"></app-fragrance>
     </div>
   </div>
 </div>

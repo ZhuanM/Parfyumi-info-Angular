@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 import { Fragrance } from '../models/fragrance';
+import { FragranceModalComponent } from '../fragrance-modal/fragrance-modal.component';
 
 @Component({
   selector: 'app-frag-list',
@@ -8,9 +10,10 @@ import { Fragrance } from '../models/fragrance';
   styleUrls: ['./frag-list.component.css']
 })
 export class FragListComponent implements OnInit {
+  bsModalRef: BsModalRef;
   fragrances: Array<Fragrance>;
 
-  constructor() {
+  constructor(private modalService: BsModalService) {
     this.fragrances = [
       {
         id: 1,
@@ -278,6 +281,20 @@ export class FragListComponent implements OnInit {
         infoLink: "https://www.fragrantica.com/perfume/Bvlgari/Jasmin-Noir-3750.html"
       }
     ]
+  }
+
+  openModal(){
+    const initialState = {
+      list: [
+        'Open a modal with component',
+        'Pass your data',
+        'Do something else',
+        '...'
+      ],
+      title: 'Modal with component'
+    };
+    this.bsModalRef = this.modalService.show(FragranceModalComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
   }
 
   visibleFrags: Array<Fragrance>;
