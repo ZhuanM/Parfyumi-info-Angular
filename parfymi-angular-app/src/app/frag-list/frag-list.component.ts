@@ -20,14 +20,7 @@ export class FragListComponent implements OnInit {
         image: "https://fimgs.net/mdimg/perfume/375x500.26358.jpg",
         infoLink: "https://www.fragrantica.com/perfume/Bvlgari/Bvlgari-Man-In-Black-26358.html"
       },
-      {
-        id: 2,
-        name: "Jasmin Noir",
-        designer: "Bvlgari",
-        gender: "female",
-        image: "https://fimgs.net/mdimg/perfume/375x500.3750.jpg",
-        infoLink: "https://www.fragrantica.com/perfume/Bvlgari/Jasmin-Noir-3750.html"
-      },
+      
       {
         id: 3,
         name: "Black",
@@ -275,33 +268,30 @@ export class FragListComponent implements OnInit {
         gender: "unisex",
         image: "https://fimgs.net/mdimg/perfume/375x500.38387.jpg",
         infoLink: "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Exquisite-Musk-38387.html"
-      },     
+      },
+      {
+        id: 2,
+        name: "Jasmin Noir",
+        designer: "Bvlgari",
+        gender: "female",
+        image: "https://fimgs.net/mdimg/perfume/375x500.3750.jpg",
+        infoLink: "https://www.fragrantica.com/perfume/Bvlgari/Jasmin-Noir-3750.html"
+      }
     ]
   }
 
   visibleFrags: Array<Fragrance>;
-  genderFilter: string;
-  designerFilter: string;
-  filterByAll() {  
+  genderFilter: string = '';
+  designerFilter: string = '';
+  filterByAll() {
     this.visibleFrags = this.fragrances;
-    if (this.genderFilter && this.genderFilter !== "allGenders") {
-      this.visibleFrags = this.visibleFrags.filter(frag => {
-        if (frag.gender === this.genderFilter)
+    this.visibleFrags = this.visibleFrags.filter(frag => {
+      if (frag.gender.includes(this.genderFilter) && frag.designer.includes(this.designerFilter))
         return frag
-      })
-    }
-    
-    if (this.designerFilter && this.designerFilter !== "allDesigner") {
-      this.visibleFrags = this.visibleFrags.filter(frag => {
-        if (frag.designer === this.designerFilter)
-        return frag
-      })
-    }
-
-    console.log(this.fragrances);
+    })
   }
 
-  filterGender(filter: string) {   
+  filterGender(filter: string) {
     this.genderFilter = filter;
     this.filterByAll();
   }
@@ -312,6 +302,17 @@ export class FragListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.visibleFrags = this.fragrances;
+    this.visibleFrags = this.fragrances.sort((frag1, frag2) => {
+      if (frag1.designer < frag2.designer) return -1;
+      if (frag1.designer > frag2.designer) return 1;
+
+      if (frag1.gender == "male") return -1;
+      if (frag2.gender == "male") return 1;
+
+      if (frag1.gender == "unisex") return 1;
+      if (frag2.gender == "unisex") return -1;
+
+      return 0;
+    });
   }
 }
