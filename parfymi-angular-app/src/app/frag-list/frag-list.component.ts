@@ -8,7 +8,7 @@ import { Fragrance } from '../models/fragrance';
   styleUrls: ['./frag-list.component.css']
 })
 export class FragListComponent implements OnInit {
-  @Input('fragProp') fragrances: Array<Fragrance>;
+  fragrances: Array<Fragrance>;
 
   constructor() {
     this.fragrances = [
@@ -284,19 +284,21 @@ export class FragListComponent implements OnInit {
   designerFilter: string;
   filterByAll() {  
     this.visibleFrags = this.fragrances;
-    if (this.genderFilter !== "allGenders") {
+    if (this.genderFilter && this.genderFilter !== "allGenders") {
       this.visibleFrags = this.visibleFrags.filter(frag => {
         if (frag.gender === this.genderFilter)
-          return frag
+        return frag
+      })
+    }
+    
+    if (this.designerFilter && this.designerFilter !== "allDesigner") {
+      this.visibleFrags = this.visibleFrags.filter(frag => {
+        if (frag.designer === this.designerFilter)
+        return frag
       })
     }
 
-    if (this.designerFilter !== "allDesigner") {
-      this.visibleFrags = this.visibleFrags.filter(frag => {
-        if (frag.designer === this.designerFilter)
-          return frag
-      })
-    }    
+    console.log(this.fragrances);
   }
 
   filterGender(filter: string) {   
