@@ -17,9 +17,9 @@ export class HomeComponent implements AfterViewInit {
   }
 
   showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
-    var dots = document.getElementsByClassName("demo");
+    let i;
+    let x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
+    let dots = document.getElementsByClassName("demo") as HTMLCollectionOf<HTMLElement>;
     if (n > x.length) { this.slideIndex = 1 }
     if (n < 1) { this.slideIndex = x.length }
     for (i = 0; i < x.length; i++) {
