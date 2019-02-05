@@ -350,7 +350,7 @@ export class FragListComponent implements OnInit {
         summary: "Paco Rabanne Lady Million е прелестен аромат за жени. Това е аромат на красотата и поклон пред силата на женствеността. Влюбете се в радостта от насладата. Оставете се да ви увлича фантазията с парфюма Lady Million и опознайте света на съблазняването.",
         perfumers: [ "Anne Flipo", "Beatrice Piquet", "Dominique Ropion", "Bruno Jovanovic" ],
         topNotes: "малина, нероли",
-        midNotes: "арабски жасмин, гардения, цветове на африкански портокал",
+        midNotes: "арабски жасмин, гардения, портокал",
         baseNotes: "бял мед, кехлибар, пачули"
       },
       {
