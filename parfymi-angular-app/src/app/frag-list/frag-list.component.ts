@@ -21,7 +21,12 @@ export class FragListComponent implements OnInit {
         designer: "Bvlgari",
         gender: "male",
         image: "https://fimgs.net/mdimg/perfume/375x500.26358.jpg",
-        infoLink: "https://www.fragrantica.com/perfume/Bvlgari/Bvlgari-Man-In-Black-26358.html"
+        infoLink: "https://www.fragrantica.com/perfume/Bvlgari/Bvlgari-Man-In-Black-26358.html",
+        summary: "Bvlgari Man In Black е парфюмна вода за мъже, зад чието създаване стои митичният Бог на земята, поне по отношение на ароматните съставки. Ароматът е провъзгласен за сладка композиция , изпълнена с пикантни и топли тонове и е предназначен за харизматични и модерни хора, които имат свой собствен стил.",
+        perfumers: [ "Alberto Morillas" ],
+        topNotes: "ром, тютюн",
+        midNotes: "ирис, кожа, тубероза",
+        baseNotes: "бензоин, гуаяк, зърна от тонка"
       },
       
       {
@@ -283,15 +288,9 @@ export class FragListComponent implements OnInit {
     ]
   }
 
-  openModal(){
+  openModal(frag: Fragrance){
     const initialState = {
-      list: [
-        'Open a modal with component',
-        'Pass your data',
-        'Do something else',
-        '...'
-      ],
-      title: 'Modal with component'
+      fragrance: frag
     };
     this.bsModalRef = this.modalService.show(FragranceModalComponent, {initialState});
     this.bsModalRef.content.closeBtnName = 'Close';

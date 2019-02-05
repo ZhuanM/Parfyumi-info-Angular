@@ -3,3 +3,7 @@
 .pointer {
     cursor: pointer;
 }
+
+.modal-dialog {
+ margin-top: 200px !important;
+}

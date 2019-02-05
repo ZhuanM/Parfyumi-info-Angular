@@ -5,4 +5,9 @@ export class Fragrance {
     gender: string;
     image: string;
     infoLink: string;
+    summary: string;
+    perfumers: Array<string>;
+    topNotes: string;
+    midNotes: string;
+    baseNotes: string;
 }
