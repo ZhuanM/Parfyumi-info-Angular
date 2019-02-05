@@ -12,28 +12,39 @@
       </div>
       <div class="col-sm-5">
         <div class="frag-name">
-          Име: {{fragrance.name}}
+          <span class="frag-description-type">Име:</span> {{fragrance.name}}
         </div>
         <div class="frag-designer">
-          Дизайнер: {{fragrance.designer}}
+          <span class="frag-description-type">Дизайнер:</span> {{fragrance.designer}}
         </div>
         <div class="frag-gender">
-          Пол: {{fragrance.gender == 'male' ? 'мъж' : ''}}
-          {{fragrance.gender == 'female' ? 'жена' : ''}}
-          {{fragrance.gender == 'unisex' ? 'унисекс' : ''}}
+          <span class="frag-description-type">Пол:</span> {{fragrance.gender == 'male' ? 'Мъж' : ''}}
+          {{fragrance.gender == 'female' ? 'Женa' : ''}}
+          {{fragrance.gender == 'unisex' ? 'Унисекс' : ''}}
         </div>
         <div class="frag-perfumer">
-          {{fragrance.perfumers.length > 1 ? 'Парфюмъри:' : 'Парфюмър:'}}
+          <span class="frag-description-type">
+            {{fragrance.perfumers.length > 1 ? 'Парфюмъри:' : 'Парфюмър:'}}
+          </span>
         </div>
         <div class="frag-perfumer-list" *ngFor="let perfumer of fragrance.perfumers">
           {{perfumer}}
         </div>
+        <hr>
+        <div class="frag-notes">
+          <span class="frag-description-type">Връхни ноти:</span> {{fragrance.topNotes}}
+          <br>
+          <span class="frag-description-type">Средни ноти:</span> {{fragrance.midNotes}}
+          <br>
+          <span class="frag-description-type">Базови ноти:</span> {{fragrance.baseNotes}}
+        </div>
       </div>
     </div>
+    <hr>
     <div class="row">
-        <div class="frag-summary">
-            Описание: {{fragrance.summary}}
-          </div>
+      <div class="frag-summary">
+        <span class="frag-description-type">Описание:</span> {{fragrance.summary}}
+      </div>
     </div>
   </div>
 </div>

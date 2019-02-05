@@ -5,5 +5,9 @@
 }
 
 .modal-dialog {
- margin-top: 200px !important;
+    margin-top: 200px !important;
+}
+
+.modal-content {
+    border-radius: 20px !important;
 }
