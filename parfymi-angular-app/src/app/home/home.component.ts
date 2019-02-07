@@ -1,51 +1,24 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef,  } from '@angular/core';
+
+import { CarouselComponent } from '../carousel/carousel.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements AfterViewInit {
-  slideIndex: number = 1;
-
-  plusDivs(n) {
-    this.showDivs(this.slideIndex += n);
-  }
-
-  currentDiv(n) {
-    this.showDivs(this.slideIndex = n);
-  }
-
-  showDivs(n) {
-    let i;
-    let x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>;
-    let dots = document.getElementsByClassName("demo") as HTMLCollectionOf<HTMLElement>;
-    if (n > x.length) { this.slideIndex = 1 }
-    if (n < 1) { this.slideIndex = x.length }
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" w3-white", "");
-    }
-    x[this.slideIndex - 1].style.display = "block";
-    dots[this.slideIndex - 1].className += " w3-white";
-  }
-
+export class HomeComponent {
 
   @ViewChild('hero')
-  private her: ElementRef;
+  private heroExp: ElementRef;
 
-  @ViewChild('w3content')
-  private w3exp: ElementRef;
+  @ViewChild(CarouselComponent)
+  private carouselExp: ElementRef;
 
   toggleAnimation(): void {
-    this.her.nativeElement.classList.toggle('hero-expanded');
+    this.heroExp.nativeElement.classList.toggle('hero-expanded');
 
-    this.w3exp.nativeElement.classList.toggle('w3-content-expanded');
-  }
-
-  ngAfterViewInit() {
-    this.showDivs(this.slideIndex);
+    let x = document.getElementsByClassName("carousel");
+    x[0].classList.toggle('carousel-expanded');
   }
 }
