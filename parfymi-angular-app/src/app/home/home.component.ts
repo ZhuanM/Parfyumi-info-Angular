@@ -12,13 +12,11 @@ export class HomeComponent {
   @ViewChild('hero')
   private heroExp: ElementRef;
 
-  @ViewChild(CarouselComponent)
-  private carouselExp: ElementRef;
-
   toggleAnimation(): void {
     this.heroExp.nativeElement.classList.toggle('hero-expanded');
 
-    let x = document.getElementsByClassName("carousel");
-    x[0].classList.toggle('carousel-expanded');
+    // I make it this way with carouselExp because I don't have access to the carousel class and i can't put "#" like with the hero class
+    let carouselExp = document.getElementsByClassName("carousel");
+    carouselExp[0].classList.toggle('carousel-expanded');
   }
 }
