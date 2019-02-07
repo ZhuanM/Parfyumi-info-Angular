@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { FragListComponent } from './frag-list/frag-list.component';
 import { FragranceComponent } from './fragrance/fragrance.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FragranceModalComponent } from './fragrance-modal/fragrance-modal.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { FragranceModalComponent } from './fragrance-modal/fragrance-modal.compo
     FragranceComponent,
     NotFoundComponent,
     FragranceModalComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   entryComponents: [FragranceModalComponent],
   providers: [],

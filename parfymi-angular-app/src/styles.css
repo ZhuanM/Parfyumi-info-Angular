@@ -5,9 +5,32 @@
 }
 
 .modal-dialog {
-    margin-top: 200px !important;
+    margin-top: 140px !important;
 }
 
 .modal-content {
     border-radius: 20px !important;
+    width: 600px !important;
+}
+
+.carousel {
+    max-width: 550px !important;
+    height: 320px !important;
+    border-radius: 25px;
+    border: 1px solid #666666;
+}
+
+.carousel .item,
+.carousel .item img,
+.carousel-inner {
+    height: 100% !important;
+}
+
+.carousel .item img {
+    border-radius: 25px;
+}
+
+.carousel-caption h3 {
+    font-size: 1.6rem !important;
+    font-family: 'Montserrat', sans-serif;
 }
