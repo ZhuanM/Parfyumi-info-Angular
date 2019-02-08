@@ -461,7 +461,7 @@ export class FragListComponent implements OnInit {
   filterByAll() {
     this.visibleFrags = this.fragrances;
     this.visibleFrags = this.visibleFrags.filter(frag => {
-      if (frag.gender.includes(this.genderFilter) && frag.designer.includes(this.designerFilter))
+      if (frag.gender.startsWith(this.genderFilter) && frag.designer.startsWith(this.designerFilter))
         return frag
     })
   }

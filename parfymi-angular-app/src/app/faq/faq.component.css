@@ -1,19 +1,11 @@
-#entirety {
+.entirety {
     background: url(pikwizard-5ea3346ab3f8e6af2acc1a6c764c6b55.jpg);
     background-size: cover;
     background-position: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-
-#info {
-    max-width: 800px;
-    margin: auto;
 }
 
 .faq-container {
-    margin: auto;
-    width: 828px;
+    max-width: 950px;
     background-color: white;
     border-radius: 25px;
     border: 2px solid#666666;
@@ -35,7 +27,6 @@
 }
 
 .answer {
-    width: 800px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 22px;
 }

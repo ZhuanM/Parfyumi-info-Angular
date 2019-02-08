@@ -1,13 +1,10 @@
-#entirety {
+.entirety {
     background: url(bloom-blooming-bottle-965731.jpg);
     background-size: cover;
     background-position: center;
 }
 
 #filter-container {
-    position: absolute;
-    margin-left: 350px;
-    width: 300px;
     background-color: white;
     border-radius: 25px;
     border: 2px solid#666666;
@@ -16,10 +13,7 @@
 }
 
 #frags-container {
-    display: inline-block;
-    width: 905px;
     min-height: 900px;
-    margin-left: 710px;
     background-color: white;
     border-radius: 25px;
     border: 2px solid#666666;
@@ -28,7 +22,7 @@
 }
 
 #filter-header {
-    margin-left: 100px;
+    text-align: center;
     font-size: 22px;
     font-family: 'Montserrat', sans-serif;
     padding-top: 13px;
@@ -73,8 +67,4 @@
     font-size: 22px;
     font-family: 'Montserrat', sans-serif;
     padding-top: 13px;
-}
-
-#frags {
-    padding-left: 20px;
 }
