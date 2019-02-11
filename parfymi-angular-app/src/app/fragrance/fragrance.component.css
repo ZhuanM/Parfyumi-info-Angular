@@ -8,8 +8,7 @@ a {
     border: 1px solid #666666;
     border-radius: 25px;
     display: inline-table;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    margin: 10px 10px;
 }
 
 img {
