@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import {PaginatorModule} from 'primeng/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     BrowserModule,
     AppRoutingModule,
     ModalModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    PaginatorModule
   ],
   entryComponents: [FragranceModalComponent],
   providers: [],

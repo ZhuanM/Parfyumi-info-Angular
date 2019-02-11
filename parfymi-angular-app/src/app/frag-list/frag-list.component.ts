@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 import { Fragrance } from '../models/fragrance';
 import { FragranceModalComponent } from '../fragrance-modal/fragrance-modal.component';
+import { Paginator } from 'primeng/paginator';
 
 @Component({
   selector: 'app-frag-list',
@@ -13,6 +14,8 @@ export class FragListComponent implements OnInit {
   bsModalRef: BsModalRef;
   fragrances: Array<Fragrance>;
 
+  @ViewChild('paginator') paginator: Paginator;
+  
   constructor(private modalService: BsModalService) {
     this.fragrances = [
       {
@@ -455,15 +458,18 @@ export class FragListComponent implements OnInit {
     this.bsModalRef.content.closeBtnName = 'Close';
   }
 
-  visibleFrags: Array<Fragrance>;
+  filteredFrags: Array<Fragrance>;
   genderFilter: string = '';
   designerFilter: string = '';
   filterByAll() {
-    this.visibleFrags = this.fragrances;
-    this.visibleFrags = this.visibleFrags.filter(frag => {
+    this.filteredFrags = this.fragrances;
+    this.filteredFrags = this.filteredFrags.filter(frag => {
       if (frag.gender.startsWith(this.genderFilter) && frag.designer.startsWith(this.designerFilter))
         return frag
     })
+
+    this.paginate({ page: 0, first: 0, rows: 12 });
+    this.paginator.changePageToFirst({ page: 0, first: 0, rows: 12 });
   }
 
   filterGender(filter: string) {
@@ -476,18 +482,25 @@ export class FragListComponent implements OnInit {
     this.filterByAll();
   }
 
+  visibleFrags: Array<Fragrance>;
+  paginate(event) {
+    this.visibleFrags = this.filteredFrags.slice(event.first, event.first + event.rows);
+}
+
   ngOnInit() {
-    this.visibleFrags = this.fragrances.sort((frag1, frag2) => {
+    this.filteredFrags = this.fragrances.sort((frag1, frag2) => {
       if (frag1.designer < frag2.designer) return -1;
       if (frag1.designer > frag2.designer) return 1;
-
+      
       if (frag1.gender == "male") return -1;
       if (frag2.gender == "male") return 1;
-
+      
       if (frag1.gender == "unisex") return 1;
       if (frag2.gender == "unisex") return -1;
-
+      
       return 0;
     });
+
+    this.paginate({ first: 0, rows: 12 });
   }
 }

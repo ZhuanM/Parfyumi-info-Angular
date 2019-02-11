@@ -46,3 +46,23 @@
     border-radius: 25px;
     border: 1px solid #666666;
 }
+
+.ui-paginator {
+    border-bottom-left-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
+    background-color: white !important;
+}
+
+.ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active{
+    background-color: #dc3545d4 !important;
+    border-radius: 50% !important;
+    margin: 0 5px;
+}
+
+.ui-paginator-element {
+    outline: none !important;
+}
+
+.ui-paginator-element:hover{
+    border-radius: 50% !important;
+}

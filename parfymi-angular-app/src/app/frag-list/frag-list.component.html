@@ -106,9 +106,12 @@
             Лист с парфюми
           </header>
           <hr class="divider">
-          <div class="d-inline">
+          <div class="fragrances">
             <app-fragrance class="d-inline-block" *ngFor="let frag of visibleFrags" [fragInfo]="frag" (click)="openModal(frag)">
             </app-fragrance>
+          </div>
+          <div class="paginator">
+            <p-paginator [rows]="12" [totalRecords]="filteredFrags.length" (onPageChange)="paginate($event)" #paginator></p-paginator>
           </div>
         </div>
       </div>
