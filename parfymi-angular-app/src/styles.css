@@ -66,3 +66,7 @@
 .ui-paginator-element:hover{
     border-radius: 50% !important;
 }
+
+/* html, body {
+    height: 100%;
+} */

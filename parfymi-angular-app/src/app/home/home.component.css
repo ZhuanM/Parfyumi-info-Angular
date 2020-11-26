@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-header {
+.main-screen {
     background-image: url("bgimage.jpg");
     height: 100vh;
     background-size: cover;
