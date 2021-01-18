@@ -101,7 +101,7 @@ export class FragListComponent implements OnInit {
         name: "CH Men",
         designer: "Carolina Herrera",
         gender: "male",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7OCkKDJaSrbuwCMN-KbJC3UmZz1mhr9JeeP1sP9TdNw77Kw8fOQ",
+        image: "https://fimgs.net/mdimg/perfume/375x500.6759.jpg",
         infoLink: "https://www.fragrantica.com/perfume/Carolina-Herrera/CH-Men-6759.html",
         summary: "Carolina Herrera CH Men е луксозен мъжки аромат, предназначен за ексцентрично елегантните мъже, обичащи да изявяват своето превъзходство. Уханието CH Men съчетава дървесни и пикантни аромати, които съвършено изразяват мъжествената смелост на истинския елегантен мъж, който не желае да е извън екшъна.",
         perfumers: [ "Няма информация" ],
