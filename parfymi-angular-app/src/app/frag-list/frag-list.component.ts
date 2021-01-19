@@ -466,7 +466,7 @@ export class FragListComponent implements OnInit {
     this.filteredFrags = this.filteredFrags.filter(frag => {
       if (frag.gender.startsWith(this.genderFilter) && frag.designer.startsWith(this.designerFilter))
         return frag
-    })
+    });
 
     this.paginate({ page: 0, first: 0, rows: 12 });
     this.paginator.changePageToFirst({ page: 0, first: 0, rows: 12 });
@@ -485,7 +485,7 @@ export class FragListComponent implements OnInit {
   visibleFrags: Array<Fragrance>;
   paginate(event) {
     this.visibleFrags = this.filteredFrags.slice(event.first, event.first + event.rows);
-}
+  }
 
   ngOnInit() {
     this.filteredFrags = this.fragrances.sort((frag1, frag2) => {
